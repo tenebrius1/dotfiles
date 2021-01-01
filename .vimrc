@@ -2,11 +2,13 @@ se ma
 se ff=unix
 
 call plug#begin('~/.vim/plugged')
-Plug 'https://github.com/itchyny/lightline.vim'
-Plug 'https://github.com/frazrepo/vim-rainbow'
+Plug 'itchyny/lightline.vim'
+Plug 'frazrepo/vim-rainbow'
 Plug 'preservim/nerdtree'
-Plug 'https://github.com/tomasr/molokai'
-Plug 'https://github.com/morhetz/gruvbox'
+Plug 'jiangmiao/auto-pairs' 
+Plug 'mhinz/vim-startify'
+Plug 'tomasr/molokai'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " Indention Options
@@ -62,8 +64,8 @@ command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | 
 let NERDTreeQuitOnOpen=1
 let NERDTreeAutoDeleteBuffer=1
 let NERDTreeMinimalUI=1
-let NERDTreeDirArrowExpandable=">"
-let NERDTreeDirArrowCollapsible="v"
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 let g:lightline = {
       \ 'colorscheme': 'deus',
       \ 'active': {
