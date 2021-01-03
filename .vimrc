@@ -1,6 +1,10 @@
+set nocompatible
+
+" Makes vim work with WSL2
 se ma
 se ff=unix
 
+" Plugins 
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'frazrepo/vim-rainbow'
@@ -34,31 +38,39 @@ set encoding=utf-8
 set laststatus=2
 set ruler
 set number rnu
-set wildmode=longest,list,full
+set wildmode=longest,list
 set wildmenu
 set noerrorbells
 set showcmd
 set lazyredraw
 set noshowmode
 set shortmess+=I
+set ttyfast
 " Theme options
 set t_Co=256
 set termguicolors
 colorscheme gruvbox
 set bg=dark
-"Miscallaneous
+" Miscallaneous
 set autoread
 set backspace=indent,eol,start
 set history=1000
 set dir=~/.cache/vim//
 set backupdir=~/.cache/vim//
 set timeout timeoutlen=1000 ttimeoutlen=100
+" Sane splits
+set splitright
+set splitbelow
 
 " Key mappings
 map <F2> :NERDTreeToggle<CR>
 let mapleader=","
 nmap <leader>w :w!<cr>
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), []) | endfor
+
+" Jump to start and end of line using home row keys
+map H ^
+map L $
 
 " Plugin options
 let NERDTreeQuitOnOpen=1
