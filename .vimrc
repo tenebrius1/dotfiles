@@ -48,7 +48,6 @@ set shortmess+=I
 set ttyfast
 " Theme options
 set t_Co=256
-set termguicolors
 colorscheme gruvbox
 set bg=dark
 " Miscallaneous
